@@ -12,7 +12,7 @@ const getDatabaseUrl = () => {
   
   // 生产环境默认路径
   if (process.env.NODE_ENV === 'production') {
-    return 'file:./dev.db'
+    return 'file:./db/custom.db'
   }
   
   // 开发环境默认路径
