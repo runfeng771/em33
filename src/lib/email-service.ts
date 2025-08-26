@@ -41,8 +41,8 @@ class EmailService {
         tlsOptions: {
           rejectUnauthorized: false
         },
-        connTimeout: 15000,
-        authTimeout: 10000
+        connTimeout: 5000,
+        authTimeout: 5000
       })
 
       const emails: EmailData[] = []
@@ -55,8 +55,8 @@ class EmailService {
           }
 
           // 获取最近7天的未读邮件和最近1天的已读邮件
-          const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          const oneDayAgo = new Date(Date.now() - 1 * 24 * 60 * 60 * 1000);
+          const sevenDaysAgo = new Date(Date.now() - 37 * 24 * 60 * 60 * 1000);
+          const oneDayAgo = new Date(Date.now() - 31 * 24 * 60 * 60 * 1000);
           console.log(`搜索从 ${sevenDaysAgo.toISOString()} 开始的未读邮件和从 ${oneDayAgo.toISOString()} 开始的已读邮件`);
           
           // 使用更高效的搜索条件：优先获取未读邮件
